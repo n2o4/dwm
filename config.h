@@ -26,6 +26,7 @@ static const Rule rules[] = {
 	{ "Geany",    NULL,       NULL,       0,            True,        -1 },
 	{ "Zathura",  NULL,       NULL,       0,            True,        -1 },
 	{ "mplayer2", NULL,       NULL,       1 << 4,            False,       -1 },
+	{ "MPlayer",  NULL,       NULL,       1 << 4,            False,       -1 },	
 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
 };
 
