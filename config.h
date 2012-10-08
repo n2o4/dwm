@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-misc-fixed-medium-r-semicondensed--13-100-100-100-c-60-iso8859-1";
+static const char font[]            = "-*-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1";
 static const char normbordercolor[] = "#4e555c";
 static const char normbgcolor[]     = "#303334";
 static const char normfgcolor[]     = "#a0a0a0";
@@ -24,10 +24,12 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Geany",    NULL,       NULL,       0,            True,        -1 },
+	{ "Gvim",     NULL,       NULL,       1 << 2,       False,       -1 },	
 	{ "Zathura",  NULL,       NULL,       0,            True,        -1 },
-	{ "mplayer2", NULL,       NULL,       1 << 4,            False,       -1 },
-	{ "MPlayer",  NULL,       NULL,       1 << 4,            False,       -1 },	
+	{ "mplayer2", NULL,       NULL,       1 << 4,       False,       -1 },
+	{ "MPlayer",  NULL,       NULL,       1 << 4,       False,       -1 },	
 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
+	{ "Dwb",      NULL,       NULL,       1 << 1,       False,       -1 },
 };
 
 /* layout(s) */
@@ -41,7 +43,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "TTT",      bstack },    /* first entry is default */
 	{ "[T]",      tile },
-        { "[F]",      NULL },    /* no layout function means floating behavior */
+    { "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "===",      bstackhoriz },
 };
