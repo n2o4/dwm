@@ -1,5 +1,3 @@
-/* See LICENSE file for copyright and license details. */
-
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1";
 static const char normbordercolor[] = "#4e555c";
@@ -9,7 +7,7 @@ static const char selbordercolor[]  = "#A1BBD3";
 static const char selbgcolor[]      = "#303334";
 static const char selfgcolor[]      = "#A1BBD3";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 4;       /* snap pixel */
+static const unsigned int snap      = 4;        /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
@@ -43,7 +41,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "TTT",      bstack },    /* first entry is default */
 	{ "[T]",      tile },
-    { "[F]",      NULL },    /* no layout function means floating behavior */
+        { "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "===",      bstackhoriz },
 };
@@ -73,13 +71,13 @@ static Key keys[] = {
 	{ 0,                        0x1008ff15, spawn,      SHCMD("ncmpcpp stop") },
 	{ 0,                        0x1008ff16, spawn,      SHCMD("ncmpcpp prev") },
 	{ 0,                        0x1008ff17, spawn,      SHCMD("ncmpcpp next") },
-	{ 0,    0x1008ff13, spawn,  {.v = louder } },
-	{ 0,    0x1008ff11, spawn,  {.v = lower } },
-	{ 0,    0x1008ff12, spawn,  {.v = mute } },
+	{ 0,                        0x1008ff13, spawn,      {.v = louder } },
+	{ 0,                        0x1008ff11, spawn,      {.v = lower } },
+	{ 0,                        0x1008ff12, spawn,      {.v = mute } },
 	{ MODKEY,                       XK_q,      spawn,          {.v = dmenusession } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
+        { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
