@@ -12,7 +12,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "front", "www", "devel", "misc", "media" };
+static const char *tags[] = { " . ", " : ", " :. ", " :: ", " ::. " };
 
 static const Rule rules[] = {
 	/* xprop(1):
