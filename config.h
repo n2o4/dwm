@@ -42,7 +42,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "TTT",      bstack },    /* first entry is default */
 	{ "[T]",      tile },
-        { "[F]",      NULL },    /* no layout function means floating behavior */
+	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "===",      bstackhoriz },
 };
@@ -68,20 +68,20 @@ static const char *mute[]       = { "amixer", "-q", "set", "Master", "toggle", N
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0,                        0x1008ff14, spawn,      SHCMD("ncmpcpp toggle") },
-	{ 0,                        0x1008ff15, spawn,      SHCMD("ncmpcpp stop") },
-	{ 0,                        0x1008ff16, spawn,      SHCMD("ncmpcpp prev") },
-	{ 0,                        0x1008ff17, spawn,      SHCMD("ncmpcpp next") },
-	{ 0,                        0x1008ff13, spawn,      {.v = louder } },
-	{ 0,                        0x1008ff11, spawn,      {.v = lower } },
-	{ 0,                        0x1008ff12, spawn,      {.v = mute } },
-    { MODKEY,                   XK_n,       spawn,      SHCMD("snotes")},
-    { MODKEY|ShiftMask,         XK_n,       spawn,      SHCMD("snotes-open \"`sselp`\"")},
-    { MODKEY|ControlMask,       XK_n,       spawn,      SHCMD("snotes -s")},
+	{ 0,                            0x1008ff14, spawn,         SHCMD("ncmpcpp toggle") },
+	{ 0,                            0x1008ff15, spawn,         SHCMD("ncmpcpp stop") },
+	{ 0,                            0x1008ff16, spawn,         SHCMD("ncmpcpp prev") },
+	{ 0,                            0x1008ff17, spawn,         SHCMD("ncmpcpp next") },
+	{ 0,                            0x1008ff13, spawn,         {.v = louder } },
+	{ 0,                            0x1008ff11, spawn,         {.v = lower } },
+	{ 0,                            0x1008ff12, spawn,         {.v = mute } },
+	{ MODKEY,                       XK_n,       spawn,         SHCMD("snotes")},
+	{ MODKEY|ShiftMask,             XK_n,       spawn,         SHCMD("snotes-open \"`sselp`\"")},
+	{ MODKEY|ControlMask,           XK_n,       spawn,         SHCMD("snotes -s")},
 	{ MODKEY,                       XK_q,      spawn,          {.v = dmenusession } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -94,9 +94,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
-    { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[3]} },
-    { MODKEY,                       XK_v,      setlayout,      {.v = &layouts[4]} },
-    { MODKEY,                       XK_space,  setlayout,      {0} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_v,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
