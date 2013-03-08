@@ -3,7 +3,7 @@ static const char font[]            = "-*-terminus-medium-r-normal--12-120-72-72
 static const char normbordercolor[] = "#4e555c";
 static const char normbgcolor[]     = "#303334";
 static const char normfgcolor[]     = "#a0a0a0";
-static const char selbordercolor[]  = "#A1BBD3";
+static const char selbordercolor[]  = "#f0c674";
 static const char selbgcolor[]      = "#303334";
 static const char selfgcolor[]      = "#A1BBD3";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -12,7 +12,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { " . ", " : ", " :. ", " :: ", " ::. " };
+static const char *tags[] = { "  .  ", "  :  ", "  :. ", "  :: ", " ::. ", " ::: ", " :::.", " ::::", "::::." };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -22,12 +22,13 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Geany",    NULL,       NULL,       0,            True,        -1 },
-	{ "Gvim",     NULL,       NULL,       1 << 2,       False,       -1 },	
+/*	{ "Gvim",     NULL,       NULL,       1 << 2,       False,       -1 }, */
 	{ "Zathura",  NULL,       NULL,       0,            True,        -1 },
 	{ "mplayer2", NULL,       NULL,       1 << 4,       False,       -1 },
 	{ "MPlayer",  NULL,       NULL,       1 << 4,       False,       -1 },	
 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
 	{ "Dwb",      NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "X-www-browser",      NULL,       NULL,       1 << 1,       False,       -1 },	
 };
 
 /* layout(s) */
@@ -41,7 +42,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "TTT",      bstack },    /* first entry is default */
 	{ "[T]",      tile },
-	{ "[F]",      NULL },    /* no layout function means floating behavior */
+        { "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "===",      bstackhoriz },
 };
@@ -74,10 +75,13 @@ static Key keys[] = {
 	{ 0,                        0x1008ff13, spawn,      {.v = louder } },
 	{ 0,                        0x1008ff11, spawn,      {.v = lower } },
 	{ 0,                        0x1008ff12, spawn,      {.v = mute } },
+    { MODKEY,                   XK_n,       spawn,      SHCMD("snotes")},
+    { MODKEY|ShiftMask,         XK_n,       spawn,      SHCMD("snotes-open \"`sselp`\"")},
+    { MODKEY|ControlMask,       XK_n,       spawn,      SHCMD("snotes -s")},
 	{ MODKEY,                       XK_q,      spawn,          {.v = dmenusession } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
+    { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -90,9 +94,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_v,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
+    { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[3]} },
+    { MODKEY,                       XK_v,      setlayout,      {.v = &layouts[4]} },
+    { MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
